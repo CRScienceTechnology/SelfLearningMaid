@@ -6,8 +6,8 @@ import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 
 //组件的补充
-import 'package:untitled1/pages/zhuye/Searchpage.dart';
-import 'package:untitled1/pages/zhuye/Connectpage.dart';
+import 'package:untitled1/GUIPage/zhuye/Searchpage.dart';
+import 'package:untitled1/GUIPage/zhuye/Connectpage.dart';
 
 
 /*初始页面及其衍生的页面*/

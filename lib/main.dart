@@ -1,33 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';//字体
-
-
-//页面
-import 'package:untitled1/pages/tabview/Settingpage.dart';
-import 'package:untitled1/pages/tabview/Resourcepage.dart';
-import 'package:untitled1/pages/zhuye/Startpage.dart';
+import 'package:untitled1/GUIPage/tabview/Settingpage.dart';//页面
+import 'package:untitled1/GUIPage/tabview/Resourcepage.dart';
+import 'package:untitled1/GUIPage/zhuye/Startpage.dart';
 
 
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-
-  Map<String, WidgetBuilder> routes = {
+class MyApp extends StatelessWidget 
+{
+  
+  Map<String, WidgetBuilder> routes = 
+  {
     '/tabview/Settingpage': (context) => Settingpage(),
     '/tabview/Resourcepage': (context) => Resourcepage(),
     '/Startpage': (context) => Startpage(),
     // '/Startpage/Questionpage': (context) => Questionpage(),
   };
+  
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      //设置全局的样式
+      //全局样式设置器
+      title: 'SelfLearningMaid',
       theme: ThemeData(
         useMaterial3: true,
 
-        // //统一的设置padding的样式
+        // //统一的设置padding的样?
         // inputDecorationTheme: InputDecorationTheme(
         //   contentPadding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
         // ),
@@ -64,16 +66,9 @@ class MyApp extends StatelessWidget {
 
 
 
-
-
-
-//我需要的组件的类型
-
-
-
-
 //抽屉
-class Choupage extends StatefulWidget {
+class Choupage extends StatefulWidget 
+{
   const Choupage({super.key, required this.title});
   final String title;
 
