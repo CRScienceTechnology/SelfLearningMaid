@@ -1,8 +1,11 @@
+// 引入第三方包组件
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';//字体
-import 'package:untitled1/GUIPage/tabview/Settingpage.dart';//页面
-import 'package:untitled1/GUIPage/tabview/Resourcepage.dart';
-import 'package:untitled1/GUIPage/zhuye/Startpage.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+// 引入自己写的界面组件
+import 'package:AISL_Maid/GUIPage/tabview/Settingpage.dart';
+import 'package:AISL_Maid/GUIPage/tabview/Resourcepage.dart';
+import 'package:AISL_Maid/GUIPage/zhuye/Startpage.dart';
 
 
 void main() {
@@ -58,11 +61,6 @@ class MyApp extends StatelessWidget
     );
   }
 }
-
-
-
-
-
 
 
 
