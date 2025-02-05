@@ -66,7 +66,7 @@ class MultiTabPage extends StatelessWidget
   {
     return MaterialApp(
       home: DefaultTabController(
-        length: 3,
+        length: 20,
         child: Scaffold(
           appBar: AppBar(
             bottom: const TabBar(

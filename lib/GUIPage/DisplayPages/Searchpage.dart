@@ -56,7 +56,8 @@ class Searchpage extends StatelessWidget{
             ),
           ),
           Center(
-            child: ConstrainedBox(
+            child: ConstrainedBox
+            (
               constraints: BoxConstraints(
                 minWidth: 80.0,
                 minHeight: 80.0,

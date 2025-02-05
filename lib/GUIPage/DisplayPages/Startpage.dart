@@ -17,7 +17,7 @@ import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class Startpage extends StatefulWidget 
 {
-  const Startpage({super.key}); // 子类传递给父类的构造参数，用于管理子类Widget的生命周期
+  const Startpage({super.key}); // 
   @override
   State<Startpage> createState() => _StartpageState(); // 创建子类的State
 }
@@ -46,6 +46,7 @@ class _StartpageState extends State<Startpage> // 创建页面的State
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: const MultiTabPage(),
         backgroundColor: Colors.lightBlue.shade50.withGreen(230),
         actions: [
           //设置原型的头像
@@ -55,22 +56,23 @@ class _StartpageState extends State<Startpage> // 创建页面的State
           //   radius: 20.0, // 设置头像半径
           //
           // ),
-
+          
           //设置复杂的现代化的头像
           InkWell(
-            onTap: () {
+            onTap: () 
+            {
               // 点击头像时执行的操作
               print('头像被点击了！');
             },
             borderRadius: BorderRadius.circular(100.0), // 圆形边界
-            onHover: (bool value) {
-
+            onHover: (bool value) 
+            {
             },
             child: const CircleAvatar(
               backgroundImage: AssetImage('picture/head.jpg'),
               radius: 20.0,
-
             ),
+
           )
         ],
       ),
@@ -207,3 +209,5 @@ class _StartpageState extends State<Startpage> // 创建页面的State
     );
   }
 }
+
+
