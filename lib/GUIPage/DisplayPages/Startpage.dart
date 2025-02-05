@@ -1,33 +1,37 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
-//图标
+// 原生组件库
+import 'package:flutter/material.dart';
+// 自写组件库
+import 'package:AISL_Maid/GUIPage/DisplayPages/Searchpage.dart';
+import 'package:AISL_Maid/GUIPage/DisplayPages/Connectpage.dart';
+import 'package:AISL_Maid/GUIPage/AuxililaryPage/MultiTabPage.dart';
+
+
+// 图标
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 
-//组件的补充
-import 'package:AISL_Maid/GUIPage/zhuye/Searchpage.dart';
-import 'package:AISL_Maid/GUIPage/zhuye/Connectpage.dart';
 
 
 /*初始页面及其衍生的页面*/
 
-
-
-class Startpage extends StatefulWidget{
-  Startpage({super.key});
-
+class Startpage extends StatefulWidget 
+{
+  const Startpage({super.key}); // 子类传递给父类的构造参数，用于管理子类Widget的生命周期
   @override
-  State<Startpage> createState() => _StartpageState();
+  State<Startpage> createState() => _StartpageState(); // 创建子类的State
 }
 
-class _StartpageState extends State<Startpage> {
+class _StartpageState extends State<Startpage> // 创建页面的State
+{
 
   int _selectedIndex=0;
 
-  List<Widget> widgets=[
+  List<Widget> widgets=
+  [
     Searchpage(),
-    Connectpage()
+    Connectpage(),
+    const MultiTabPage()
   ];
 
 
@@ -43,7 +47,6 @@ class _StartpageState extends State<Startpage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.lightBlue.shade50.withGreen(230),
-        title: Text('SHOT MOON'),
         actions: [
           //设置原型的头像
           // IconButton(onPressed: ()=>print("nihao"), icon:),
