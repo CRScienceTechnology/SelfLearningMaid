@@ -66,9 +66,11 @@ class MultiTabPage extends StatelessWidget
   {
     return MaterialApp(
       home: DefaultTabController(
-        length: 20,
+        length: 20,// 标签页的最大可容纳数
+        animationDuration: const Duration(milliseconds: 10),
         child: Scaffold(
-          appBar: AppBar(
+          appBar: AppBar
+          (
             bottom: const TabBar(
               tabs: [
                 Tab(icon: Icon(Icons.directions_car)),
@@ -76,7 +78,6 @@ class MultiTabPage extends StatelessWidget
                 Tab(icon: Icon(Icons.directions_bike)),
               ],
             ),
-            title: const Text('Tabs Demo'),
           ),
           body: const TabBarView(
             children: [

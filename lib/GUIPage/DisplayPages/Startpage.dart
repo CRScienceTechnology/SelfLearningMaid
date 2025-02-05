@@ -46,7 +46,7 @@ class _StartpageState extends State<Startpage> // 创建页面的State
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const MultiTabPage(),
+        flexibleSpace: const MultiTabPage(),
         backgroundColor: Colors.lightBlue.shade50.withGreen(230),
         actions: [
           //设置原型的头像
