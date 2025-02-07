@@ -64,29 +64,28 @@ class MultiTabPage extends StatelessWidget
   @override
   Widget build(BuildContext context) 
   {
-    return MaterialApp(
+    return const MaterialApp(
       home: DefaultTabController(
         length: 20,// 标签页的最大可容纳数
-        animationDuration: const Duration(milliseconds: 10),
-        child: Scaffold(
-          appBar: AppBar
-          (
-            bottom: const TabBar(
+        animationDuration: Duration(milliseconds: 10),
+        child: TabBar
+            (
+              isScrollable: true, // 根据tab大小进行自适应紧凑排列
               tabs: [
                 Tab(icon: Icon(Icons.directions_car)),
                 Tab(icon: Icon(Icons.directions_transit)),
                 Tab(icon: Icon(Icons.directions_bike)),
               ],
+              
             ),
-          ),
-          body: const TabBarView(
-            children: [
-              Icon(Icons.directions_car),
-              Icon(Icons.directions_transit),
-              Icon(Icons.directions_bike),
-            ],
-          ),
-        ),
+          
+          // body: const TabBarView(
+          //   children: [
+          //     Icon(Icons.directions_car),
+          //     Icon(Icons.directions_transit),
+          //     Icon(Icons.directions_bike),
+          //   ],
+          // ),
       ),
     );
   }

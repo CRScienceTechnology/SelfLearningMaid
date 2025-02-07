@@ -41,13 +41,12 @@ class _StartpageState extends State<Startpage> // 创建页面的State
       _selectedIndex = index;
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        flexibleSpace: const MultiTabPage(),
-        backgroundColor: Colors.lightBlue.shade50.withGreen(230),
+        flexibleSpace: MultiTabPage(),
+        backgroundColor: const Color.fromARGB(255, 97, 171, 206).withGreen(230),
         actions: [
           //设置原型的头像
           // IconButton(onPressed: ()=>print("nihao"), icon:),
@@ -57,7 +56,7 @@ class _StartpageState extends State<Startpage> // 创建页面的State
           //
           // ),
           
-          //设置复杂的现代化的头像
+          //设置右上角的头像
           InkWell(
             onTap: () 
             {
@@ -76,7 +75,7 @@ class _StartpageState extends State<Startpage> // 创建页面的State
           )
         ],
       ),
-
+      // 抽屉菜单布局
       drawer: Drawer(//抽屉
           child: Column(
             children: [
@@ -119,7 +118,7 @@ class _StartpageState extends State<Startpage> // 创建页面的State
             ],
           )
       ),
-
+      // 窗口主体布局
       body: Row(
         children:[
           Column(
