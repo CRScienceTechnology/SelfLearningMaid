@@ -59,26 +59,33 @@ import 'package:flutter/material.dart';
 
 class MultiTabPage extends StatelessWidget 
 {
-  const MultiTabPage({super.key});
+  final ValueChanged<int> bodywidgets_onItemTapped;      // 用ValueChanged<int>泛型来快速创建回调函数                 
+  const MultiTabPage({required this.bodywidgets_onItemTapped, super.key}); 
+  //required关键字表示该参数必须传入；this表示当前类中的属性；
+  //this.bodywidgets_onItemTapped表示要传入复合当前类中复合泛型ValueChanged<int>
 
   @override
   Widget build(BuildContext context) 
   {
-    return const MaterialApp(
-      home: DefaultTabController(
+    return MaterialApp(
+      home: DefaultTabController // 
+      (
         length: 20,// 标签页的最大可容纳数
-        animationDuration: Duration(milliseconds: 10),
+        animationDuration: const Duration(milliseconds: 10),
         child: TabBar
             (
               isScrollable: true, // 根据tab大小进行自适应紧凑排列
-              tabs: [
+              tabs: const [
                 Tab(icon: Icon(Icons.directions_car)),
                 Tab(icon: Icon(Icons.directions_transit)),
                 Tab(icon: Icon(Icons.directions_bike)),
+                Tab(icon: Icon(Icons.add_box_outlined),)
               ],
-              
+              onTap: 
+              //(index) => print(index),     // 获取被点击的Tab的索引
+              (index) {bodywidgets_onItemTapped(index);print(index);} // 调用回调函数更新索引
             ),
-          
+            
           // body: const TabBarView(
           //   children: [
           //     Icon(Icons.directions_car),

@@ -1,11 +1,11 @@
-
 // 原生组件库
+import 'package:AISL_Maid/GUIPage/AuxililaryPage/Body.dart';
 import 'package:flutter/material.dart';
 // 自写组件库
 import 'package:AISL_Maid/GUIPage/DisplayPages/Searchpage.dart';
 import 'package:AISL_Maid/GUIPage/DisplayPages/Connectpage.dart';
 import 'package:AISL_Maid/GUIPage/AuxililaryPage/MultiTabPage.dart';
-
+import 'package:AISL_Maid/GUIPage/AuxililaryPage/Body.dart';
 
 // 图标
 import 'package:phosphor_flutter/phosphor_flutter.dart';
@@ -25,14 +25,24 @@ class Startpage extends StatefulWidget
 class _StartpageState extends State<Startpage> // 创建页面的State
 {
 
+  // 底部导航栏的索引
   int _selectedIndex=0;
-
+  // 底部导航栏的widget的存储泛型列表
   List<Widget> widgets=
   [
     Searchpage(),
     Connectpage(),
-    const MultiTabPage()
   ];
+
+  // 窗口主体布局的索引
+  int _bodypageIndex=0;
+  // 窗口主体布局widget的存储泛型列表
+  List<Widget> bodywidgets=[
+    const Body1(),
+    const Body2(),
+    const Body3(),
+  ];
+  // Notice：列表类为0索引方法，同时Tab索引也是从0开始
 
 
   //利用点击函数进行页面的刷新
@@ -41,11 +51,20 @@ class _StartpageState extends State<Startpage> // 创建页面的State
       _selectedIndex = index;
     });
   }
+
+  void bodywidgets_onItemTapped(int index) {
+    setState(() 
+    {
+      _bodypageIndex = index;
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        flexibleSpace: MultiTabPage(),
+        flexibleSpace: MultiTabPage(bodywidgets_onItemTapped: (int value) {  },),
         backgroundColor: const Color.fromARGB(255, 97, 171, 206).withGreen(230),
         actions: [
           //设置原型的头像
@@ -119,94 +138,12 @@ class _StartpageState extends State<Startpage> // 创建页面的State
           )
       ),
       // 窗口主体布局
-      body: Row(
-        children:[
-          Column(
-            children: [
-              MediaQuery(
-                data: MediaQuery.of(context as BuildContext).copyWith(textScaler: TextScaler.linear(1.0)),
-                child: Container(
-                    margin: EdgeInsets.only(top: 30,left: 10,bottom: 30,right: 10),
-                    width: 60,
-                    height: MediaQuery.of(context as BuildContext).size.height * 0.75,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        colors: [
-                          Colors.blue.shade100,
-                          Colors.pink.shade100,
-                          Colors.white
-                        ],
-                      ),
-                      // borderRadius: BorderRadius.circular(20.0), // 圆角
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                          topRight:Radius.circular(20),
-                          bottomLeft:Radius.circular(10),
-                          bottomRight: Radius.circular(10)
-                      ),
-                      // 圆角
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.2),
-                          spreadRadius: 5,
-                          blurRadius: 7,
-                          offset: Offset(0, 3), // 阴影偏移
-                        ),
-                      ],
-                      // color: Colors.lightBlueAccent,
-                    ),
-
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: ListView(
-                        children: [
-                          Padding(padding: EdgeInsets.only(top: 10)),
-                          Tooltip(
-                            message: "搜索",
-                            preferBelow: false, // 不优先在下方显示
-                            child: IconButton(
-                              icon: Icon(
-                                PhosphorIcons.cat(),
-                                size: 32.0,
-                              ),
-                              onPressed: () {
-                                _onItemTapped(0);
-                              },
-                            ),
-                          ),
-
-                          ListTile(
-                            title: Text('AI',textAlign: TextAlign.center,style: TextStyle(
-
-                            ),),
-                            onTap: () {//点击事件
-                              _onItemTapped(1);
-                            },
-                          ),
-                          ListTile(
-                            title: Text('书桌',textAlign: TextAlign.center),
-                            onTap: () {
-                              _onItemTapped(2);
-                              print('Item 2 tapped');
-                            },
-                          ),
-                          // Add more items as needed
-                        ],
-                      ),
-                    )
-                ),
-              ),
-            ],
-          ),
-          Expanded(child: Center(
-              child: widgets.elementAt(_selectedIndex))
-          ),
-        ],
-      ),
+      body: bodywidgets.elementAt(_bodypageIndex),
     );
   }
 }
 
 
+
+
+// TODO:2025.2.8 完成点击MultiTabPage中的Tabwidget就能实现跳转到Body.dart写好的相应页面的功能
