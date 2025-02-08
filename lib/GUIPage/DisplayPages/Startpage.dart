@@ -52,10 +52,12 @@ class _StartpageState extends State<Startpage> // 创建页面的State
     });
   }
 
+  // ignore: non_constant_identifier_names
   void bodywidgets_onItemTapped(int index) {
     setState(() 
     {
       _bodypageIndex = index;
+      print(_bodypageIndex); // Test：测试MultiTabPage的Tab widget的onTap方法结果是否影响父widget
     });
   }
 
@@ -64,7 +66,8 @@ class _StartpageState extends State<Startpage> // 创建页面的State
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        flexibleSpace: MultiTabPage(bodywidgets_onItemTapped: (int value) {  },),
+        // Notice：传入一个类中函数的方法，通过类名.方法名()进行调用
+        flexibleSpace: MultiTabPage(bodywidgets_onItemTapped:(int index){bodywidgets_onItemTapped(index);}),
         backgroundColor: const Color.fromARGB(255, 97, 171, 206).withGreen(230),
         actions: [
           //设置原型的头像
@@ -146,4 +149,4 @@ class _StartpageState extends State<Startpage> // 创建页面的State
 
 
 
-// TODO:2025.2.8 完成点击MultiTabPage中的Tabwidget就能实现跳转到Body.dart写好的相应页面的功能
+// TODO:2025.2.8 完成点击MultiTabPage中的Tabwidget就能实现跳转到Body.dart写好的相应页面的功能-->修复将函数传入类的实现

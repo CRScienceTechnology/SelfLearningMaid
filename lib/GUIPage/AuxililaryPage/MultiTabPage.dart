@@ -60,6 +60,7 @@ import 'package:flutter/material.dart';
 class MultiTabPage extends StatelessWidget 
 {
   final ValueChanged<int> bodywidgets_onItemTapped;      // 用ValueChanged<int>泛型来快速创建回调函数                 
+  // ignore: non_constant_identifier_names
   const MultiTabPage({required this.bodywidgets_onItemTapped, super.key}); 
   //required关键字表示该参数必须传入；this表示当前类中的属性；
   //this.bodywidgets_onItemTapped表示要传入复合当前类中复合泛型ValueChanged<int>
