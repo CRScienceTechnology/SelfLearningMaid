@@ -21,22 +21,26 @@ class Body1 extends StatefulWidget
                                               // State<Body1> 指定了这个 _BodyState() 对象是为 Body1 组件服务的。
 }
 
-class _BodyState extends State<Body1> 
+class _BodyState extends State<Body1> // 状态管理逻辑和UI构建代码,此为State Widget，而非狭义单指状态管理逻辑
 {
-  // 状态管理逻辑和UI构建代码,此为State Widget，而非狭义单指状态管理逻辑
+  
+
   int _selectedIndex=0;
-    //利用点击函数进行页面的刷新
-  void _onItemTapped(int index) {
-       setState(() 
-       {
+  void _onItemTapped(int index)     //利用点击函数进行页面的刷新
+  {
+  setState(() 
+    {
       _selectedIndex = index;
-       });
+    });
   }
     List<Widget> widgets=
   [
     Searchpage(),
     Connectpage(),
   ];
+
+
+
   @override
   Widget build(BuildContext context) 
   {
@@ -177,6 +181,34 @@ class Body3 extends StatefulWidget
   State<Body3> createState() => _Body3State();
 }
 class _Body3State extends State<Body3> 
+{
+  @override
+  Widget build(BuildContext context) 
+  {
+    return const Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              '这是一个空白页',
+              style: TextStyle(fontSize: 24),
+            )
+          ]
+        )
+      )
+    );
+  }
+}
+
+class Body4 extends StatefulWidget 
+{
+  const Body4({super.key});
+
+  @override
+  State<Body4> createState() => _Body4State();
+}
+class _Body4State extends State<Body4> 
 {
   @override
   Widget build(BuildContext context) 
