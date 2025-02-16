@@ -1,13 +1,13 @@
 // 原生组件库
 // ignore_for_file: non_constant_identifier_names
 
-import 'package:AISL_Maid/GUIPage/AuxililaryPage/Body.dart';
+import 'package:AISL_Maid/GUI/PartPage/Body.dart';
 import 'package:flutter/material.dart';
 // 自写组件库
-import 'package:AISL_Maid/GUIPage/DisplayPages/Searchpage.dart';
-import 'package:AISL_Maid/GUIPage/DisplayPages/Connectpage.dart';
-import 'package:AISL_Maid/GUIPage/AuxililaryPage/MultiTabPage.dart';
-import 'package:AISL_Maid/GUIPage/AuxililaryPage/Body.dart';
+import 'package:AISL_Maid/GUI/MainPages/Searchpage.dart';
+import 'package:AISL_Maid/GUI/MainPages/Connectpage.dart';
+import 'package:AISL_Maid/GUI/PartPage/MultiTabPage.dart';
+import 'package:AISL_Maid/GUI/PartPage/Body.dart';
 
 // 图标
 import 'package:phosphor_flutter/phosphor_flutter.dart';

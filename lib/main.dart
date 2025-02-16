@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 // 引入自己写的界面组件
-import 'package:AISL_Maid/GUIPage/DisplayPages/Settingpage.dart';
-import 'package:AISL_Maid/GUIPage/DisplayPages/Resourcepage.dart';
-import 'package:AISL_Maid/GUIPage/DisplayPages/Startpage.dart';
+import 'package:AISL_Maid/GUI/MainPages/Settingpage.dart';
+import 'package:AISL_Maid/GUI/MainPages/Resourcepage.dart';
+import 'package:AISL_Maid/GUI/MainPages/Startpage.dart';
 
 
 

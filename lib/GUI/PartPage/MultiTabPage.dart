@@ -2,7 +2,7 @@
 // ignore_for_file: non_constant_identifier_names
 
 //主程序-多标签页
-import 'package:AISL_Maid/GUIPage/AuxililaryPage/Body.dart';
+import 'package:AISL_Maid/GUI/PartPage/Body.dart';
 import 'package:flutter/material.dart';
 
 // class MultiTabPage extends StatefulWidget  // 从StatefulWidget延申Dom树节点

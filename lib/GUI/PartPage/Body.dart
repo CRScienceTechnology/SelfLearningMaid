@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 // 自写组件库
-import 'package:AISL_Maid/GUIPage/DisplayPages/Searchpage.dart';
-import 'package:AISL_Maid/GUIPage/DisplayPages/Connectpage.dart';
-import 'package:AISL_Maid/GUIPage/AuxililaryPage/MultiTabPage.dart';
+import 'package:AISL_Maid/GUI/MainPages/Searchpage.dart';
+import 'package:AISL_Maid/GUI/MainPages/Connectpage.dart';
+import 'package:AISL_Maid/GUI/PartPage/MultiTabPage.dart';
 
 
 

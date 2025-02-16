@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../AuxililaryPage/SearchBox.dart';
+import '../PartPage/SearchBox.dart';
 
 class Searchpage extends StatelessWidget{
   //一些展示的文本
