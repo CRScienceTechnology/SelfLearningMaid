@@ -166,7 +166,9 @@ class _MultiTabPage extends State<MultiTabPage>
 // 总结：实现步骤
 // 1.在MultiTabpage.dart中创建tabbarwidgets的list泛型，用于存储已打开标签页widget
 // 2.在MultiTabpage.dart中创建一个onAddTab_func函数，用于实现点击最后一个Tab（新增标签页的功能）时新增一个标签页并跳转到该标签页的功能
-// 3.在StartPage.dart中onAddTab()函数实现具体逻辑
+// 3.在StartPage.dart中onAddTab()函数实现增加新的body页，并且切换实现标签索引，在setState函数结束后通知UI层更新UI
+// 
 // 总结：踩坑知识
 // 1.StatelessWidget组件无法使用setState()函数去动态的维护自身组件状态，因此无法实现动态的更新标签页
-// 还有一点就是不能在类中创建变量，为此我换成了StatefulWidget组件
+// 还有一点就是不能在类中创建变量，为此我换成了StatefulWidget组件。优先考虑使用Statefulwidget组件
+// 

@@ -1,7 +1,8 @@
 // 原生组件库
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, unused_field, prefer_final_fields, unused_element
 
 import 'package:AISL_Maid/GUI/PartPage/Body.dart';
+import 'package:AISL_Maid/GUI/PartPage/FloatingToolBar.dart';
 import 'package:flutter/material.dart';
 // 自写组件库
 import 'package:AISL_Maid/GUI/MainPages/Searchpage.dart';
@@ -173,8 +174,20 @@ class _StartpageState extends State<Startpage> // 创建页面的State
             ],
           )
       ),
-      // 窗口主体布局
-      body: bodywidgets.elementAt(_bodypageIndex),
+      // 窗口主体布局:借用
+      body: Stack(
+        children: [
+          bodywidgets.elementAt(_bodypageIndex),
+          DraggableFloatingBar(
+            children: [
+              IconButton(icon: Icon(Icons.star), onPressed: () {}),
+              IconButton(icon: Icon(Icons.share), onPressed: () {}),
+              IconButton(icon: Icon(Icons.settings), onPressed: () {}),
+            ],
+          )
+        ],
+      )
+      
     );
   }
 }
@@ -208,3 +221,6 @@ class _StartpageState extends State<Startpage> // 创建页面的State
 // 在子组件中写状态改变函数，然后在父组件中调用子组件中的函数，实现状态改变，会更方便。也更好明白变量作用域关系
 // 如果为后者方式，则需要在子组件中去影响父组件的变量跨域，这样会破坏封装性，并且会增加代码复杂度
 
+
+
+// 
