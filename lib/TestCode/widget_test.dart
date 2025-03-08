@@ -3,9 +3,11 @@ import 'package:flutter/services.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'AI',
       home: VerificationScreen(),
     );
@@ -183,12 +185,11 @@ class OtpTextFormField extends StatelessWidget {
   final bool autofocus;
 
   const OtpTextFormField(
-      {Key? key,
+      {super.key,
         this.focusNode,
         this.onChanged,
         this.onSaved,
-        this.autofocus = false})
-      : super(key: key);
+        this.autofocus = false});
 
   @override
   Widget build(BuildContext context) {
@@ -216,11 +217,10 @@ class LogoWithTitle extends StatelessWidget {
   final List<Widget> children;
 
   const LogoWithTitle(
-      {Key? key,
+      {super.key,
         required this.title,
         this.subText = '',
-        required this.children})
-      : super(key: key);
+        required this.children});
   @override
   Widget build(BuildContext context) {
     return SafeArea(

@@ -103,7 +103,7 @@ class _MultiTabPage extends State<MultiTabPage>
     setState(() 
     {
       tabbarwidgets.insert(tabbarwidgets.length-1,const Tab(icon: Icon(Icons.directions_bike)));//往最后一个tab前面插入新标签 
-      tab_body_widgets.insert(tabbarwidgets.length-1, Body2());// 给新增标签新建并且分配一个页面
+      tab_body_widgets.insert(tabbarwidgets.length-1, const Body2());// 给新增标签新建并且分配一个页面
       multitab_tapfunc(tabbarwidgets.length-1);// 切换到新增标签页
     });
   }

@@ -570,6 +570,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class Connectpage extends StatefulWidget {
+  const Connectpage({super.key});
+
   @override
   _ChatScreenState createState() => _ChatScreenState();
 }
@@ -618,12 +620,12 @@ class _ChatScreenState extends State<Connectpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Connecting...')),
+      appBar: AppBar(title: const Text('Connecting...')),
       body: Column(
         children: <Widget>[
           Expanded(
             child: ListView.builder(
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               itemCount: _messages.length,
               itemBuilder: (_, int index) {
                 return MessageBubble(message: _messages[index]);
@@ -631,11 +633,11 @@ class _ChatScreenState extends State<Connectpage> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: TextField(
               controller: _textController,
               onSubmitted: _handleSubmitted,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: 'Type a message',
                 border: OutlineInputBorder(),
               ),
@@ -656,16 +658,16 @@ class Message {
 class MessageBubble extends StatelessWidget {
   final Message message;
 
-  MessageBubble({required this.message});
+  const MessageBubble({super.key, required this.message});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8.0),
       child: Align(
         // alignment: message.isSender ? Alignment._end : Alignment._start,
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+          padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
           decoration: BoxDecoration(
             color: message.isSender ? Colors.blue : Colors.pinkAccent.shade100,
             borderRadius: BorderRadius.circular(8.0),
@@ -686,7 +688,7 @@ class MessageBubble extends StatelessWidget {
           // )
           Text(
             message.text,
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
           ),
         ),
       ),

@@ -6,6 +6,8 @@ import 'package:flutter/cupertino.dart';
 
 class CustomTextFieldWidget extends StatefulWidget
  {
+  const CustomTextFieldWidget({super.key});
+
   @override
   State<CustomTextFieldWidget> createState() => _CustomTextFieldWidgetState();
 }
@@ -70,22 +72,22 @@ class _CustomTextFieldWidgetState extends State<CustomTextFieldWidget> {
                 width: 2.0, // 边框宽度
               ),
             ),
-            focusedBorder: OutlineInputBorder(
+            focusedBorder: const OutlineInputBorder(
               borderSide: BorderSide(
                 color: Colors.blueAccent, // 聚焦时边框颜色
               ),
             ),
-            enabledBorder: OutlineInputBorder(
+            enabledBorder: const OutlineInputBorder(
               borderSide: BorderSide(
                 color: Colors.grey, // 启用时边框颜色
               ),
             ),
-            errorBorder: OutlineInputBorder(
+            errorBorder: const OutlineInputBorder(
               borderSide: BorderSide(
                 color: Colors.red, // 错误时边框颜色
               ),
             ),
-            focusedErrorBorder: OutlineInputBorder(
+            focusedErrorBorder: const OutlineInputBorder(
               borderSide: BorderSide(
                 color: Colors.redAccent, // 聚焦错误时边框颜色
               ),
@@ -93,13 +95,13 @@ class _CustomTextFieldWidgetState extends State<CustomTextFieldWidget> {
             // fillColor: Colors.blueGrey[100], // 输入框填充颜色
             fillColor: Colors.white, // 输入框填充颜色
             filled: true, // 是否填充输入框
-            contentPadding: EdgeInsets.symmetric(
+            contentPadding: const EdgeInsets.symmetric(
               vertical: 10.0,
               horizontal: 20.0,
             ),
             // 输入框内边距
             // suffixIcon:
-            suffixIcon: IconButton(icon: Icon(Icons.sentiment_very_satisfied),
+            suffixIcon: IconButton(icon: const Icon(Icons.sentiment_very_satisfied),
               onPressed: () {
                 // 当用户按下Enter键时执行的操作
                 // print('User submitted: $value');
@@ -107,12 +109,12 @@ class _CustomTextFieldWidgetState extends State<CustomTextFieldWidget> {
               },
             ), // 后缀图标
           ),
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.black, // 输入文本颜色
             fontSize: 18.0, // 输入文本字体大小
           ),
         ),
-        Text('$_response'), // 显示 API 返回的响应
+        Text(_response), // 显示 API 返回的响应
       ],
     );
   }

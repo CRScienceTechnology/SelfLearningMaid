@@ -49,11 +49,11 @@ class _BodyState extends State<Body1> // 状态管理逻辑和UI构建代码,此
           Column(
             children: [
               MediaQuery(
-                data: MediaQuery.of(context as BuildContext).copyWith(textScaler: TextScaler.linear(1.0)),
+                data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
                 child: Container(
-                    margin: EdgeInsets.only(top: 30,left: 10,bottom: 30,right: 10),
+                    margin: const EdgeInsets.only(top: 30,left: 10,bottom: 30,right: 10),
                     width: 60,
-                    height: MediaQuery.of(context as BuildContext).size.height * 0.75,
+                    height: MediaQuery.of(context).size.height * 0.75,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         begin: Alignment.topLeft,
@@ -77,7 +77,7 @@ class _BodyState extends State<Body1> // 状态管理逻辑和UI构建代码,此
                           color: Colors.black.withOpacity(0.2),
                           spreadRadius: 5,
                           blurRadius: 7,
-                          offset: Offset(0, 3), // 阴影偏移
+                          offset: const Offset(0, 3), // 阴影偏移
                         ),
                       ],
                       // color: Colors.lightBlueAccent,
@@ -87,7 +87,7 @@ class _BodyState extends State<Body1> // 状态管理逻辑和UI构建代码,此
                       alignment: Alignment.center,
                       child: ListView(
                         children: [
-                          Padding(padding: EdgeInsets.only(top: 10)),
+                          const Padding(padding: EdgeInsets.only(top: 10)),
                           Tooltip(
                             message: "搜索",
                             preferBelow: false, // 不优先在下方显示
@@ -103,7 +103,7 @@ class _BodyState extends State<Body1> // 状态管理逻辑和UI构建代码,此
                           ),
 
                           ListTile(
-                            title: Text('AI',textAlign: TextAlign.center,style: TextStyle(
+                            title: const Text('AI',textAlign: TextAlign.center,style: TextStyle(
 
                             ),),
                             onTap: () {//点击事件
@@ -111,7 +111,7 @@ class _BodyState extends State<Body1> // 状态管理逻辑和UI构建代码,此
                             },
                           ),
                           ListTile(
-                            title: Text('书桌',textAlign: TextAlign.center),
+                            title: const Text('书桌',textAlign: TextAlign.center),
                             onTap: () {
                               _onItemTapped(2);
                               print('Item 2 tapped');

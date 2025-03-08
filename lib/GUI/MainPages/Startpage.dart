@@ -136,12 +136,12 @@ class _StartpageState extends State<Startpage> // 创建页面的State
           child: Column(
             children: [
               //drawer的元素的填充
-              DrawerHeader(child: Icon(
+              const DrawerHeader(child: Icon(
                   Icons.ac_unit)
               ),
               ListTile(
-                  leading: Icon(Icons.account_balance_sharp),
-                  title: Text("Startpage"),
+                  leading: const Icon(Icons.account_balance_sharp),
+                  title: const Text("Startpage"),
                   onTap: (){
                     //点击函数
                     Navigator.pushNamed(context, '/Startpage');
@@ -150,8 +150,8 @@ class _StartpageState extends State<Startpage> // 创建页面的State
                   }
               ),
               ListTile(
-                  leading: Icon(Icons.account_tree_outlined),
-                  title: Text("Resource"),
+                  leading: const Icon(Icons.account_tree_outlined),
+                  title: const Text("Resource"),
                   onTap: (){
                     //点击函数
                     Navigator.pushNamed(context, '/tabview/Resourcepage');
@@ -164,7 +164,7 @@ class _StartpageState extends State<Startpage> // 创建页面的State
                     PhosphorIcons.gear(PhosphorIconsStyle.fill),
                     size: 32.0,
                   ),
-                  title: Text("Setting"),
+                  title: const Text("Setting"),
                   onTap: (){
                     Navigator.pushNamed(context, '/tabview/Settingpage');
                     // Navigator.pop(context);
@@ -180,9 +180,9 @@ class _StartpageState extends State<Startpage> // 创建页面的State
           bodywidgets.elementAt(_bodypageIndex),
           DraggableFloatingBar(
             children: [
-              IconButton(icon: Icon(Icons.star), onPressed: () {}),
-              IconButton(icon: Icon(Icons.share), onPressed: () {}),
-              IconButton(icon: Icon(Icons.settings), onPressed: () {}),
+              IconButton(icon: const Icon(Icons.star), onPressed: () {}),
+              IconButton(icon: const Icon(Icons.share), onPressed: () {}),
+              IconButton(icon: const Icon(Icons.settings), onPressed: () {}),
             ],
           )
         ],

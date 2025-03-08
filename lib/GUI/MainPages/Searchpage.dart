@@ -4,22 +4,24 @@ import 'package:flutter/material.dart';
 import '../PartPage/SearchBox.dart';
 
 class Searchpage extends StatelessWidget{
+  const Searchpage({super.key});
+
   //一些展示的文本
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(5),
+      padding: const EdgeInsets.all(5),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           //部件的缩放的选项
           //根据屏幕的大小进行缩放
           MediaQuery(
-            data: MediaQuery.of(context as BuildContext).copyWith(textScaler: TextScaler.linear(1.0)),
-            child: Container(
-              width: MediaQuery.of(context as BuildContext).size.width * 0.3,
-              height: MediaQuery.of(context as BuildContext).size.height * 0.3,
+            data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
+            child: SizedBox(
+              width: MediaQuery.of(context).size.width * 0.3,
+              height: MediaQuery.of(context).size.height * 0.3,
               child: Image.asset('picture/back.jpg'),
             ),
           ),
@@ -58,7 +60,7 @@ class Searchpage extends StatelessWidget{
           Center(
             child: ConstrainedBox
             (
-              constraints: BoxConstraints(
+              constraints: const BoxConstraints(
                 minWidth: 80.0,
                 minHeight: 80.0,
                 maxWidth: 800.0,

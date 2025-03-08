@@ -39,6 +39,8 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -48,19 +50,21 @@ class MyApp extends StatelessWidget {
 }
 
 class DraggableFloatingBarTestPage extends StatelessWidget {
+  const DraggableFloatingBarTestPage({super.key});
+
   @override
   Widget build(BuildContext context)
    {
     return Scaffold(
-      appBar: AppBar(title: Text('Draggable Floating Bar Test')),
+      appBar: AppBar(title: const Text('Draggable Floating Bar Test')),
       body: Stack(
         children: [
           // 其他内容...
           DraggableFloatingBar(
             children: [
-              IconButton(icon: Icon(Icons.star), onPressed: () {}),
-              IconButton(icon: Icon(Icons.share), onPressed: () {}),
-              IconButton(icon: Icon(Icons.settings), onPressed: () {}),
+              IconButton(icon: const Icon(Icons.star), onPressed: () {}),
+              IconButton(icon: const Icon(Icons.share), onPressed: () {}),
+              IconButton(icon: const Icon(Icons.settings), onPressed: () {}),
             ],
           )
         ],
@@ -84,7 +88,7 @@ class DraggableFloatingBar extends StatefulWidget {
 class _DraggableFloatingBarState extends State<DraggableFloatingBar> {
   Offset _offset = const Offset(0, 0); // 悬浮窗位置
   bool _isDragging = false; // 拖动状态
-  double _width = 200; // 悬浮窗默认宽度
+  final double _width = 200; // 悬浮窗默认宽度
 
   // 初始化悬浮窗位置和状态
   @override
@@ -144,7 +148,7 @@ class _DraggableFloatingBarState extends State<DraggableFloatingBar> {
             decoration: BoxDecoration(
               color: Colors.white.withOpacity(0.9),
               borderRadius: BorderRadius.circular(20),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Colors.black12,
                   blurRadius: 10,

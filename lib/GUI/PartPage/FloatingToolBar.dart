@@ -49,7 +49,7 @@ class DraggableFloatingBar extends StatefulWidget {
 class _DraggableFloatingBarState extends State<DraggableFloatingBar> {
   Offset _offset = const Offset(0, 0); // 悬浮窗位置
   bool _isDragging = false; // 拖动状态
-  double _width = 200; // 悬浮窗默认宽度
+  final double _width = 200; // 悬浮窗默认宽度
 
   // 初始化悬浮窗位置和状态
   @override
@@ -109,7 +109,7 @@ class _DraggableFloatingBarState extends State<DraggableFloatingBar> {
             decoration: BoxDecoration(
               color: Colors.white.withOpacity(0.9),
               borderRadius: BorderRadius.circular(20),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Colors.black12,
                   blurRadius: 10,

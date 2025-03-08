@@ -25,9 +25,9 @@ class MyApp extends StatelessWidget
   // key: 路由名称，value: 路由对应的页面
   Map<String, WidgetBuilder> routes = 
   {
-    '/tabview/Settingpage': (context) => Settingpage(),
-    '/tabview/Resourcepage': (context) => Resourcepage(),
-    '/Startpage': (context) => Startpage(),
+    '/tabview/Settingpage': (context) => const Settingpage(),
+    '/tabview/Resourcepage': (context) => const Resourcepage(),
+    '/Startpage': (context) => const Startpage(),
     // '/Startpage/Questionpage': (context) => Questionpage(),
   };
 
@@ -65,7 +65,7 @@ class MyApp extends StatelessWidget
           displaySmall: GoogleFonts.pacifico(),
         ),
       ),
-      home: Startpage(), // 主页
+      home: const Startpage(), // 主页
       routes: routes,
     );
   }
