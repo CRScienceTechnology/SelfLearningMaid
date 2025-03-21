@@ -35,8 +35,8 @@ class _BodyState extends State<Body1> // 状态管理逻辑和UI构建代码,此
   }
     List<Widget> widgets=
   [
-    Searchpage(),
-    Connectpage(),
+    const Searchpage(),
+    const Connectpage(),
   ];
 
 

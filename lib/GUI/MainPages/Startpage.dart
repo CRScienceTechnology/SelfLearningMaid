@@ -33,8 +33,8 @@ class _StartpageState extends State<Startpage> // 创建页面的State
   // 底部导航栏的widget的存储泛型列表
   List<Widget> widgets=
   [
-    Searchpage(),
-    Connectpage(),
+    const Searchpage(),
+    const Connectpage(),
   ];
 
 

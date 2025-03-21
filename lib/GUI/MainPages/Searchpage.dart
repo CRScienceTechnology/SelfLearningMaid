@@ -66,7 +66,7 @@ class Searchpage extends StatelessWidget{
                 maxWidth: 800.0,
                 maxHeight: 200.0,
               ),
-              child: CustomTextFieldWidget(),
+              child: const CustomTextFieldWidget(),
             ),
           ),
         ],
